@@ -36,8 +36,9 @@ We want to settle a question that has been asked by US journalists for a long ti
 * `FG%`: Percentage of successes in field goals.
 * `PTS`: Points scored in the season.
  
-.NBA player
-stats image::statsCSV.png[]
+.NBA player stats 
+image::statsCSV.png[]
+
 [NOTE]
 ====
 In the image you can see that the data is separated by ";". On the other hand, the first row indicates the name of the column.
@@ -46,6 +47,8 @@ In the image you can see that the data is separated by ";". On the other hand, t
 Our objective is to find the 10 best players of all time applying the Divide and Conquer technique to find the solution.
  
 == To take into account
+* Data file is avaliable on the GitHub https://github.com/ualeda2/practica1_2022[repository] for this excercise.
+
 * When loading the data we generate a record for each player, not multiple, so we will have to check if the player is already entered in the data structure that we are using or not.
  
 * To load the data we will use a POJO (Plain Old JAVA Object) class called Player, similar to the following.

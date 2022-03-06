@@ -46,6 +46,8 @@ En la imagen podéis observar que los datos están separados por ";". Por otro l
 Nuestro objetivo es hallar los 10 mejores jugadores de todos los tiempos aplicando la técnica de Divide y Vencerás para encontrar la solución.
  
 == A tener en cuenta
+* Los datos están disponibles en el https://github.com/ualeda2/practica1_2022[repositorio] GitHub de esta práctica.
+
 * Al cargar los datos generamos un registro para cada jugador, no múltiples, por lo que tendremos que comprobar si el jugador ya está introducido en la estructura de datos que estemos utilizando o no.
  
 * Para la carga de los datos utilizaremos una clase POJO (Plain Old JAVA Object) denominada Player, parecida a la siguiente.
