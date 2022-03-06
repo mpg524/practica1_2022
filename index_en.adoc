@@ -1,0 +1,117 @@
+:encoding: utf-8
+:lang: en
+:toc: right
+:toc-title: Table of Contents
+:doctype: book
+:imagesdir: ./images
+:source-highlighter: rouge
+ 
+# Practice 1 Divide and conquer.
+Divide and conquer practical exercise for the Data Structures and Algorithms 2 course at the University of Almería.
+ 
+[abstract]
+== ​​Abstract
+ 
+Summary of the practice objectives
+ 
+.Objectives
+ 
+* To know the method of algorithmic resolution Divide and Conquer.
+* To carry out a theoretical analysis of the complexity of the solution provided.
+* Develop a solution based on the Divide and Conquer technique.
+* Check empirically the results obtained in the problem.
+* Design improvements on the first solution provided.
+ 
+:numbered:
+== Introduction
+We want to settle a question that has been asked by US journalists for a long time, who are the best NBA players of all time. For this we have a data set of the statistics of all the players from the year 1950 to 2017. For each player we have the following statistics of each one in their active years:
+ 
+* `#`: Identification number of a player during a specific year (We are not interested)
+* `SeasonStart`: Year of the season.
+* `PlayerName`: Name of the player.
+* `PlayerSalary`: Salary of the player in a specific year.
+* `Pos`: Player position.
+* `Age`: Age of the player.
+* `TM`: Equipment.
+* `FG%`: Percentage of successes in field goals.
+* `PTS`: Points scored in the season.
+ 
+.NBA player
+stats image::statsCSV.png[]
+[NOTE]
+====
+In the image you can see that the data is separated by ";". On the other hand, the first row indicates the name of the column.
+====
+ 
+Our objective is to find the 10 best players of all time applying the Divide and Conquer technique to find the solution.
+ 
+== To take into account
+* When loading the data we generate a record for each player, not multiple, so we will have to check if the player is already entered in the data structure that we are using or not.
+ 
+* To load the data we will use a POJO (Plain Old JAVA Object) class called Player, similar to the following.
+ 
+.Player.java source code
+====
+[source,JAVA]
+----
+public class Player{
+ 
+    private String playerName;
+    private ArrayList<String> teams;
+    private ArrayList<String> positions;
+    private int -score;
+ 
+    public Player(String playerName, String team, String position, int score) {
+        this.playerName = playerName;
+        this.teams = new ArrayList<String>();
+        this.teams.add(team);
+        this.positions = new ArrayList<String>();
+        this.positions.add(position);
+        this.score = score;
+    }
+ 
+    public String getPlayerName(){
+        return this.playerName;
+    }
+    public void setPlayerName(String playerName) {
+        this.playerName = playerName;
+    }
+ 
+    public ArrayList<String> getTeams(){
+        return this.teams;
+    }
+    public void setTeams(ArrayList<String> teams){
+        this.teams = teams;
+    }
+ 
+    public ArrayList<String> getPositions(){
+        return this.positions;
+    }
+    public void setPositions(ArrayList<String> positions){
+        this.positions = positions;
+    }
+ 
+    public int getScore(){
+        return this.score;
+    }
+    public void setScore(int score){
+        this.score = score;
+    }
+}
+----
+====
+ 
+* The `score` attribute matches the points scored over a year multiplied by FG%/100, since we don't want players who score a lot of points but miss almost everything.
+* If the player is already added in the data structure that we want to use to solve the problem, we will add the team in the `teams` variable, we will add the position in the `positions` variable and we will take the average of the `score` that already exists and the corresponding `score` in the new year.
+ 
+== Work to be developed
+You must propose and implement a recursive solution based on D&V's general scheme that returns the 10 best players of all time if we only take into account their score. We will perform an analysis of the complexity of the algorithm using the master method. Furthermore, we will check the execution times of the algorithm(s) you have developed.
+ 
+We will check the improvements that you develop after finding a first solution as long as you justify them empirically in the practice with better times measured, even if it is not strictly necessary to pass the practice.
+ 
+== Submissions
+A `.zip` or `.rar` file must be submitted on time with all the required documentation:
+ 
+* Report or presentation explaining the different algorithms you have used to solve the problem, taking into account the analysis of efficiency as well as the identification of each of the parts of the general scheme of Divide and Conquer.
+* Source code of the application, developed in JAVA, that solves the problem. You will have to measure the execution time of your solution so you can include the necessary commands for it in the source code.
+* A test suite with the test cases that you consider appropriate to make sure that the application works properly.

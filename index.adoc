@@ -1,0 +1,118 @@
+:encoding: utf-8
+:lang: es
+:toc: right
+:toc-title: Tabla de contenidos
+:doctype: book
+:imagesdir: ./images
+:source-highlighter: rouge
+ 
+# Práctica 1 Divide y vencerás.
+Ejercicio práctico de Divide y Vencerás para la asignatura de Estructura de Datos y Algoritmos 2 de la Universidad de Almería.
+ 
+[abstract]
+== Resumen
+ 
+Resumen de los objetivos de la práctica
+ 
+.Objetivos
+ 
+* Conocer el método de resolución algorítmica Divide y Vencerás
+* Realizar un análisis teórico de la complejidad de la solución aportada.
+* Desarrollar una solución basada en la técnica de Divide y Vencerás
+* Comprobar de manera empírica los resultados obtenidos en el problema.
+* Diseñar mejoras sobre la primera solución aportada.
+ 
+:numbered:
+== Introducción
+Queremos zanjar una pregunta que se hacen los analistas de EEUU desde tiempos inmemoriales, quienes son los mejores jugadores de la NBA de todos los tiempos. Para ello contamos con un conjunto de datos de las estadísticas de todos los jugadores desde el año 1950 al 2017. De cada jugador contamos con las siguientes estadísticas de cada uno en sus años en activo:
+ 
+* `#`: Número identificativo de un jugador durante un año concreto (No nos interesa)
+* `SeasonStart`: Año de la temporada.
+* `PlayerName`: Nombre del jugador.
+* `PlayerSalary`: Salario del jugador un año específico.
+* `Pos`: Posición del jugador.
+* `Age`: Edad del jugador.
+* `TM`: Equipo.
+* `FG%`: Porcentaje de aciertos en tiros de campo.
+* `PTS`: Puntos anotados en la temporada.
+ 
+.Stats de los jugadores de la NBA
+image::statsCSV.png[]
+[NOTE]
+====
+En la imagen podéis observar que los datos están separados por ";". Por otro lado, la primera fila indica el nombre de la columna.
+====
+ 
+Nuestro objetivo es hallar los 10 mejores jugadores de todos los tiempos aplicando la técnica de Divide y Vencerás para encontrar la solución.
+ 
+== A tener en cuenta
+* Al cargar los datos generamos un registro para cada jugador, no múltiples, por lo que tendremos que comprobar si el jugador ya está introducido en la estructura de datos que estemos utilizando o no.
+ 
+* Para la carga de los datos utilizaremos una clase POJO (Plain Old JAVA Object) denominada Player, parecida a la siguiente.
+ 
+.Player.java source code
+====
+[source,JAVA]
+----
+public class Player{
+ 
+    private String playerName;
+    private ArrayList<String> teams;
+    private ArrayList<String> positions;
+    private int score;
+ 
+    public Player(String playerName, String team, String position, int score){
+        this.playerName = playerName;
+        this.teams = new ArrayList<String>();
+        this.teams.add(team);
+        this.positions = new ArrayList<String>();
+        this.positions.add(position);
+        this.score = score;
+    }
+ 
+    public String getPlayerName(){
+        return this.playerName;
+    }
+    public void setPlayerName(String playerName){
+        this.playerName = playerName;
+    }
+ 
+    public ArrayList<String> getTeams(){
+        return this.teams;
+    }
+    public void setTeams(ArrayList<String> teams){
+        this.teams = teams;
+    }
+ 
+    public ArrayList<String> getPositions(){
+        return this.positions;
+    }
+    public void setPositions(ArrayList<String> positions){
+        this.positions = positions;
+    }
+ 
+    public int getScore(){
+        return this.score;
+    }
+    public void setScore(int score){
+        this.score = score;
+    }
+}
+----
+====
+ 
+* El atributo `score` coincide con los puntos metidos durante un año multiplicado por FG%/100, ya que no queremos jugadores que metan muchos puntos pero lo fallen casi todo.
+* Si el jugador está ya añadido en la estructura de datos que deseamos utilizar para resolver el problema añadiremos el equipo en la variable `teams`, añadiremos la posición en la variable `positions` y haremos la media del `score` que ya haya y el `score` correspondiente en el nuevo año.
+ 
+== Trabajo a desarrollar
+Debéis proponer e implementar una solución recursiva basada en el esquema general de DyV que devuelva los 10 mejores jugadores de todos los tiempos si tan solo tenemos en cuenta su score. Realizaremos un análisis de la complejidad del algoritmo utilizando el método maestro. Por otro lado, realizaremos una comprobación de los tiempos de ejecución del o de los algoritmos que hayas desarrollado.
+ 
+Valoraremos las mejoras que desarrolléis a posteriori siempre que las justifiquéis de manera empírica en la puntuación de la práctica, aunque no sea estrictamente necesaria para aprobar la práctica.
+ 
+== Entregas
+Se ha de entregar, en fecha, un archivo `.zip` o `.rar` con toda la documentación requerida:
+ 
+* Memoria o presentación que explique los distintos algoritmos que habéis utilizado para resolver el problema teniendo en cuenta el análisis de eficiencia así como la identificación de cada una de las partes del esquema general de divide y vencerás.
+* Código fuente de la aplicación, desarrollada en JAVA, que resuelva el problema planteado. Tendréis que medir el tiempo de ejecución de vuestra solución por lo que podréis incluir las órdenes necesarias para ello en el código fuente.
+* Juegos de prueba que consideréis oportunos para asegurarnos que la aplicación funciona como es debido.
+
