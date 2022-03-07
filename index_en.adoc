@@ -47,7 +47,7 @@ In the image you can see that the data is separated by ";". On the other hand, t
 Our objective is to find the 10 best players of all time applying the Divide and Conquer technique to find the solution.
  
 == To take into account
-* Data file is avaliable on the GitHub https://github.com/ualeda2/practica1_2022[repository] for this excercise.
+* Data file is avaliable on the GitHub https://github.com/ualeda2/practica1_2022[repository] for this excercise `NbaStats.csv`.
 
 * When loading the data we generate a record for each player, not multiple, so we will have to check if the player is already entered in the data structure that we are using or not.
  
@@ -113,8 +113,9 @@ You must propose and implement a recursive solution based on D&V's general schem
 We will check the improvements that you develop after finding a first solution as long as you justify them empirically in the practice with better times measured, even if it is not strictly necessary to pass the practice.
  
 == Submissions
-A `.zip` or `.rar` file must be submitted on time with all the required documentation:
- 
+A public GitHub repository with all the documentation and source code required in practice must be delivered on time:
+
+* In the repository create a folder called practice_1, where you create two subfolders, one for the documentation, `docs`, and another for the source code, `sources`.
 * Report or presentation explaining the different algorithms you have used to solve the problem, taking into account the analysis of efficiency as well as the identification of each of the parts of the general scheme of Divide and Conquer.
 * Source code of the application, developed in JAVA, that solves the problem. You will have to measure the execution time of your solution so you can include the necessary commands for it in the source code.
 * A test suite with the test cases that you consider appropriate to make sure that the application works properly.

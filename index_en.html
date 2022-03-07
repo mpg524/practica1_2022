@@ -520,46 +520,51 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 </ul>
 </div>
-<div class="paragraph data-line-40">
-<div class="title">NBA player</div>
-<p>stats image::statsCSV.png[]</p>
+<div class="imageblock data-line-40">
+<div class="content">
+<img src="./images/statsCSV.png" alt="statsCSV">
 </div>
-<div class="admonitionblock note data-line-42">
+<div class="title">Figure 1. NBA player stats</div>
+</div>
+<div class="admonitionblock note data-line-43">
 <table>
 <tr>
 <td class="icon">
 <div class="title">Note</div>
 </td>
 <td class="content">
-<div class="paragraph data-line-43">
+<div class="paragraph data-line-44">
 <p>In the image you can see that the data is separated by ";". On the other hand, the first row indicates the name of the column.</p>
 </div>
 </td>
 </tr>
 </table>
 </div>
-<div class="paragraph data-line-46">
+<div class="paragraph data-line-47">
 <p>Our objective is to find the 10 best players of all time applying the Divide and Conquer technique to find the solution.</p>
 </div>
 </div>
 </div>
-<div class="sect1 data-line-48">
+<div class="sect1 data-line-49">
 <h2 id="_to_take_into_account">2. To take into account</h2>
 <div class="sectionbody">
-<div class="ulist data-line-49">
+<div class="ulist data-line-50">
 <ul>
-<li class="data-line-49">
+<li class="data-line-50">
+<p>Data file is avaliable on the GitHub <a href="https://github.com/ualeda2/practica1_2022" data-href="https://github.com/ualeda2/practica1_2022">repository</a> for this excercise <code>NbaStats.csv</code>.</p>
+</li>
+<li class="data-line-52">
 <p>When loading the data we generate a record for each player, not multiple, so we will have to check if the player is already entered in the data structure that we are using or not.</p>
 </li>
-<li class="data-line-51">
+<li class="data-line-54">
 <p>To load the data we will use a POJO (Plain Old JAVA Object) class called Player, similar to the following.</p>
 </li>
 </ul>
 </div>
-<div class="exampleblock data-line-54">
+<div class="exampleblock data-line-57">
 <div class="title">Example 1. Player.java source code</div>
 <div class="content">
-<div class="listingblock data-line-56">
+<div class="listingblock data-line-59">
 <div class="content">
 <pre class="highlight"><code class="language-JAVA" data-lang="JAVA">public class Player{
 
@@ -609,44 +614,47 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 </div>
-<div class="ulist data-line-104">
+<div class="ulist data-line-107">
 <ul>
-<li class="data-line-104">
+<li class="data-line-107">
 <p>The <code>score</code> attribute matches the points scored over a year multiplied by FG%/100, since we don&#8217;t want players who score a lot of points but miss almost everything.</p>
 </li>
-<li class="data-line-105">
+<li class="data-line-108">
 <p>If the player is already added in the data structure that we want to use to solve the problem, we will add the team in the <code>teams</code> variable, we will add the position in the <code>positions</code> variable and we will take the average of the <code>score</code> that already exists and the corresponding <code>score</code> in the new year.</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
-<div class="sect1 data-line-107">
+<div class="sect1 data-line-110">
 <h2 id="_work_to_be_developed">3. Work to be developed</h2>
 <div class="sectionbody">
-<div class="paragraph data-line-108">
+<div class="paragraph data-line-111">
 <p>You must propose and implement a recursive solution based on D&amp;V&#8217;s general scheme that returns the 10 best players of all time if we only take into account their score. We will perform an analysis of the complexity of the algorithm using the master method. Furthermore, we will check the execution times of the algorithm(s) you have developed.</p>
 </div>
-<div class="paragraph data-line-110">
+<div class="paragraph data-line-113">
 <p>We will check the improvements that you develop after finding a first solution as long as you justify them empirically in the practice with better times measured, even if it is not strictly necessary to pass the practice.</p>
 </div>
 </div>
 </div>
-<div class="sect1 data-line-112">
+<div class="sect1 data-line-115">
 <h2 id="_submissions">4. Submissions</h2>
 <div class="sectionbody">
-<div class="paragraph data-line-113">
-<p>A <code>.zip</code> or <code>.rar</code> file must be submitted on time with all the required documentation:</p>
+<div class="paragraph data-line-116">
+<p>A public GitHub repository with all the documentation and source code required in practice must be delivered on time:</p>
 </div>
-<div class="ulist data-line-115">
+<div class="ulist data-line-118">
 <ul>
-<li class="data-line-115">
+<li class="data-line-118">
+<p>In the repository create a folder called practice_1, where you create two subfolders, one for the documentation, <code>docs</code>, and another for the source code, <code>sources</code>.</p>
+</li>
+<li class="data-line-119">
 <p>Report or presentation explaining the different algorithms you have used to solve the problem, taking into account the analysis of efficiency as well as the identification of each of the parts of the general scheme of Divide and Conquer.</p>
 </li>
-<li class="data-line-116">
+<li class="data-line-120">
 <p>Source code of the application, developed in JAVA, that solves the problem. You will have to measure the execution time of your solution so you can include the necessary commands for it in the source code.</p>
 </li>
-<li class="data-line-117">
+<li class="data-line-121">
 <p>A test suite with the test cases that you consider appropriate to make sure that the application works properly.</p>
 </li>
 </ul>
@@ -656,7 +664,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-03-06 16:31:51 +0100
+Last updated 2022-03-07 09:28:39 +0100
 </div>
 </div>
 </body>

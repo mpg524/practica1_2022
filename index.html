@@ -551,19 +551,22 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="ulist data-line-49">
 <ul>
 <li class="data-line-49">
-<p>Al cargar los datos generamos un registro para cada jugador, no múltiples, por lo que tendremos que comprobar si el jugador ya está introducido en la estructura de datos que estemos utilizando o no.</p>
+<p>Los datos están disponibles en el <a href="https://github.com/ualeda2/practica1_2022" data-href="https://github.com/ualeda2/practica1_2022">repositorio</a> GitHub de esta práctica <code>NbaStats.csv</code>.</p>
 </li>
 <li class="data-line-51">
+<p>Al cargar los datos generamos un registro para cada jugador, no múltiples, por lo que tendremos que comprobar si el jugador ya está introducido en la estructura de datos que estemos utilizando o no.</p>
+</li>
+<li class="data-line-53">
 <p>Para la carga de los datos utilizaremos una clase POJO (Plain Old JAVA Object) denominada Player, parecida a la siguiente.</p>
 </li>
 </ul>
 </div>
-<div class="exampleblock data-line-54">
+<div class="exampleblock data-line-56">
 <div class="title">Example 1. Player.java source code</div>
 <div class="content">
-<div class="listingblock data-line-56">
+<div class="listingblock data-line-58">
 <div class="content">
-<pre class="highlight"><code class="language-JAVA" data-lang="JAVA">public class Player{
+<pre class="highlight"><code class="language-java" data-lang="java">public class Player{
 
     private String playerName;
     private ArrayList&lt;String&gt; teams;
@@ -611,44 +614,47 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 </div>
-<div class="ulist data-line-104">
+<div class="ulist data-line-106">
 <ul>
-<li class="data-line-104">
+<li class="data-line-106">
 <p>El atributo <code>score</code> coincide con los puntos metidos durante un año multiplicado por FG%/100, ya que no queremos jugadores que metan muchos puntos pero lo fallen casi todo.</p>
 </li>
-<li class="data-line-105">
+<li class="data-line-107">
 <p>Si el jugador está ya añadido en la estructura de datos que deseamos utilizar para resolver el problema añadiremos el equipo en la variable <code>teams</code>, añadiremos la posición en la variable <code>positions</code> y haremos la media del <code>score</code> que ya haya y el <code>score</code> correspondiente en el nuevo año.</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
-<div class="sect1 data-line-107">
+<div class="sect1 data-line-109">
 <h2 id="_trabajo_a_desarrollar">3. Trabajo a desarrollar</h2>
 <div class="sectionbody">
-<div class="paragraph data-line-108">
+<div class="paragraph data-line-110">
 <p>Debéis proponer e implementar una solución recursiva basada en el esquema general de DyV que devuelva los 10 mejores jugadores de todos los tiempos si tan solo tenemos en cuenta su score. Realizaremos un análisis de la complejidad del algoritmo utilizando el método maestro. Por otro lado, realizaremos una comprobación de los tiempos de ejecución del o de los algoritmos que hayas desarrollado.</p>
 </div>
-<div class="paragraph data-line-110">
+<div class="paragraph data-line-112">
 <p>Valoraremos las mejoras que desarrolléis a posteriori siempre que las justifiquéis de manera empírica en la puntuación de la práctica, aunque no sea estrictamente necesaria para aprobar la práctica.</p>
 </div>
 </div>
 </div>
-<div class="sect1 data-line-112">
+<div class="sect1 data-line-114">
 <h2 id="_entregas">4. Entregas</h2>
 <div class="sectionbody">
-<div class="paragraph data-line-113">
-<p>Se ha de entregar, en fecha, un archivo <code>.zip</code> o <code>.rar</code> con toda la documentación requerida:</p>
+<div class="paragraph data-line-115">
+<p>Se ha de entregar, en fecha, un repositorio público de GitHub con toda la documentación y código fuente requerido en la práctica:</p>
 </div>
-<div class="ulist data-line-115">
+<div class="ulist data-line-117">
 <ul>
-<li class="data-line-115">
+<li class="data-line-117">
+<p>En el repositorio crear una carpeta llamada practica_1, donde creeis dos subcarpetas una para la documentación, <code>docs</code> y otra para el código fuente <code>sources</code>.</p>
+</li>
+<li class="data-line-118">
 <p>Memoria o presentación que explique los distintos algoritmos que habéis utilizado para resolver el problema teniendo en cuenta el análisis de eficiencia así como la identificación de cada una de las partes del esquema general de divide y vencerás.</p>
 </li>
-<li class="data-line-116">
+<li class="data-line-119">
 <p>Código fuente de la aplicación, desarrollada en JAVA, que resuelva el problema planteado. Tendréis que medir el tiempo de ejecución de vuestra solución por lo que podréis incluir las órdenes necesarias para ello en el código fuente.</p>
 </li>
-<li class="data-line-117">
+<li class="data-line-120">
 <p>Juegos de prueba que consideréis oportunos para asegurarnos que la aplicación funciona como es debido.</p>
 </li>
 </ul>
@@ -658,7 +664,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-03-06 16:30:36 +0100
+Last updated 2022-03-07 09:28:56 +0100
 </div>
 </div>
 </body>

@@ -46,7 +46,7 @@ En la imagen podéis observar que los datos están separados por ";". Por otro l
 Nuestro objetivo es hallar los 10 mejores jugadores de todos los tiempos aplicando la técnica de Divide y Vencerás para encontrar la solución.
  
 == A tener en cuenta
-* Los datos están disponibles en el https://github.com/ualeda2/practica1_2022[repositorio] GitHub de esta práctica.
+* Los datos están disponibles en el https://github.com/ualeda2/practica1_2022[repositorio] GitHub de esta práctica `NbaStats.csv`.
 
 * Al cargar los datos generamos un registro para cada jugador, no múltiples, por lo que tendremos que comprobar si el jugador ya está introducido en la estructura de datos que estemos utilizando o no.
  
@@ -54,7 +54,7 @@ Nuestro objetivo es hallar los 10 mejores jugadores de todos los tiempos aplican
  
 .Player.java source code
 ====
-[source,JAVA]
+[source,java]
 ----
 public class Player{
  
@@ -112,8 +112,9 @@ Debéis proponer e implementar una solución recursiva basada en el esquema gene
 Valoraremos las mejoras que desarrolléis a posteriori siempre que las justifiquéis de manera empírica en la puntuación de la práctica, aunque no sea estrictamente necesaria para aprobar la práctica.
  
 == Entregas
-Se ha de entregar, en fecha, un archivo `.zip` o `.rar` con toda la documentación requerida:
- 
+Se ha de entregar, en fecha, un repositorio público de GitHub con toda la documentación y código fuente requerido en la práctica:
+
+* En el repositorio crear una carpeta llamada practica_1, donde creeis dos subcarpetas una para la documentación, `docs` y otra para el código fuente `sources`.
 * Memoria o presentación que explique los distintos algoritmos que habéis utilizado para resolver el problema teniendo en cuenta el análisis de eficiencia así como la identificación de cada una de las partes del esquema general de divide y vencerás.
 * Código fuente de la aplicación, desarrollada en JAVA, que resuelva el problema planteado. Tendréis que medir el tiempo de ejecución de vuestra solución por lo que podréis incluir las órdenes necesarias para ello en el código fuente.
 * Juegos de prueba que consideréis oportunos para asegurarnos que la aplicación funciona como es debido.
